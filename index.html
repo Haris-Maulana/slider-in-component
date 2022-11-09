@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plain Layout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,200;0,300;0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&family=Poppins:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <header>
+      <h1>This is Header</h1>
+    </header>
+    <main>
+      <div class="para-container">
+        <div class="article-container">
+          <h2>Title</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum sunt
+            minus, harum quis dolore exercitationem, adipisci quas quia error
+            ullam quasi nam laboriosam ad repudiandae delectus doloremque
+            possimus ducimus voluptas expedita enim amet dolor qui tenetur.
+            Quasi autem laboriosam eum qui similique cum praesentium deserunt,
+            neque a recusandae nostrum placeat in laudantium id aperiam,
+            obcaecati minus! Similique maxime quibusdam labore minima tempora,
+            error nihil velit eaque quas doloribus officiis, repellat, unde
+            repudiandae magnam officia laborum est necessitatibus! Id aliquam
+            magni dicta voluptates? Quod deleniti, voluptas fugit quibusdam sunt
+            accusantium aliquid amet ipsa, aliquam obcaecati minima aut
+            repudiandae dolore, tempora numquam.
+          </p>
+        </div>
+        <div class="sidebar">
+          <h1>sidebar</h1>
+          <div class="carousel-container">
+            <button id="left" onclick="turnLeft()"></button>
+            <div class="img-proto proto-1">
+              <h2>Hello</h2>
+            </div>
+            <div class="img-proto proto-2">
+              <h2>My Name</h2>
+            </div>
+            <div class="img-proto proto-3">
+              <h2>is</h2>
+            </div>
+            <div class="img-proto proto-4">
+              <h2>Haris Maulana</h2>
+            </div>
+            <div class="img-proto proto-5">
+              <h2>Nice To Meet You!</h2>
+            </div>
+            <button id="right" onclick="turnRight()"></button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <h1>This is Footer</h1>
+    </footer>
+
+    <!-- Javascript -->
+    <script>
+      function turnLeft(){
+        let root = document.querySelector(":root")
+        let sliderIndex = parseInt(getComputedStyle(root).getPropertyValue("--slider-index"))
+          if(sliderIndex > 0){
+            root.style.setProperty('--slider-index', sliderIndex -= 1)
+              } else {
+                root.style.setProperty('--slider-index', sliderIndex =5)
+              }
+            }
+            function turnRight(){
+        let root = document.querySelector(":root")
+        let sliderIndex = parseInt(getComputedStyle(root).getPropertyValue("--slider-index"))
+          if(sliderIndex < 5){
+            root.style.setProperty('--slider-index', sliderIndex += 1)
+              } else {
+                root.style.setProperty('--slider-index', sliderIndex =0)
+              }
+            }
+    </script>
+  </body>
+</html>

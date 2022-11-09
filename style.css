@@ -1,0 +1,196 @@
+/* ===================
+General
+=================== */
+
+:root {
+  --font-Title: "Montserrat", sans-serif;
+  --font-Heading: "Montserrat Alternates", sans-serif;
+  --font-Paragraph: "Poppins", sans-serif;
+
+  --font-weight-thin: 300;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+  --slider-index: 0;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-Paragraph);
+}
+
+a,
+a:visited,
+a:hover,
+a:focus {
+  text-decoration: none;
+  color: #1b1b1b;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+/* ===================
+Body Styling
+=================== */
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+ul {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+}
+
+ul li a {
+  padding: 2rem;
+  font-size: 1.25rem;
+}
+
+h1 {
+  font-family: var(--font-Title);
+  font-weight: var(--font-weight-thin);
+}
+
+header{
+  display: flex;
+  width: 100%;
+  height: 50vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #8390FA;
+  color: white;
+  margin-bottom: 5rem;
+}
+
+.article-container {
+  width: 50%;
+  padding: 5rem;
+}
+
+.para-container {
+  word-spacing: .25rem;
+  line-height: 2rem;
+  display: flex;
+  text-align: justify;
+}
+
+.para-container h2{
+  font-size: 3rem;
+}
+
+.sidebar {
+  background-color: #1b1b1b;
+  width: 50%;
+  margin-right: 1rem;
+  position: relative;
+  border-radius: 15px;
+}
+
+.sidebar h1{
+  margin-top: 2rem;
+  text-align: center;
+  color: white;
+  font-family: var(--font-Heading);
+  font-weight: var(--font-weight-thin);
+}
+
+.carousel-container {
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+  display: flex;
+  position: relative;
+  transition: 600ms ease-in-out;
+}
+
+#left {
+  width: 200px;
+  left: 0;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  cursor: pointer;
+  z-index: 10;
+}
+
+#right {
+  width: 200px;
+  right: 0;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  cursor: pointer;
+  z-index: 10;
+}
+
+#left:hover {
+  transition: 600ms ease-in-out;
+  background-image: linear-gradient(-90deg, transparent, rgba(0,0,0,0.5));
+}
+#right:hover {
+  transition: 600ms ease-in-out;
+  background-image: linear-gradient(90deg, transparent, rgba(0,0,0,0.5));
+}
+
+.img-proto {
+  border-radius: 15px;
+  position: relative;
+  flex: 0 0 55%;
+  max-width: 50%;
+  height: 50vh;
+  aspect-ratio: 16/9;
+  margin: 5rem;
+  transform: translate(calc(var(--slider-index) * -100%));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  transition: 300ms ease-in-out;
+}
+
+.img-proto h2 {
+  line-height: 2rem;
+  padding: 2rem;
+  font-size: 3rem;
+}
+
+.proto-1 {
+  background-color: #FAC748;
+}
+.proto-2 {
+  background-color: #41EAD4;
+}
+.proto-3 {
+  background-color: #5998C5;
+}
+.proto-4 {
+  background-color: #E03616;
+}
+.proto-5 {
+  background-color: #58355E;
+}
+
+
+footer{
+  display: flex;
+  width: 100%;
+  height: 50vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #FF206E;
+  color: white;
+  margin-top: 5rem;
+}
